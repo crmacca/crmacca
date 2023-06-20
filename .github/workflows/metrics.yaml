@@ -18,7 +18,8 @@ jobs:
         uses: lowlighter/metrics@latest
         with:
           filename: general.svg
-          output_action: none
+          0output_action: gist
+          committer_gist: 4d433b19f884c9c188360f4390d9e650
           token: ${{ secrets.METRICS_TOKEN }}
           # Options
           user: crmacca
