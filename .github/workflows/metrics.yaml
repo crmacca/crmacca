@@ -24,7 +24,7 @@ jobs:
           # Options
           user: crmacca
           template: classic
-          base: header
+          base: header, activity, community, repositories
           config_octicon: yes
           config_timezone: Australia/Sydney
           config_twemoji: yes
