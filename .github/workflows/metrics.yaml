@@ -47,3 +47,87 @@ jobs:
           plugin_notable_filter: starts:>50 forks:>50
           plugin_notable_from: organization
           plugin_notable_types: commit
+          plugin_lines: yes
+          plugin_lines_history_limit: 1
+          plugin_lines_repositories_limit: 4
+          plugin_lines_sections: base
+          
+      - name: Achievement Section
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievements.svg
+          output_action: gist
+          committer_gist: 4d433b19f884c9c188360f4390d9e650
+          token: ${{ secrets.METRICS_TOKEN }}
+          # Options
+          user: crmacca
+          template: classic
+          base: ""
+          base_skip: yes
+          config_order: github.notable, github.achievements
+          config_timezone: Australia/Sydney
+          config_twemoji: yes
+          plugin_achievements: yes
+          plugin_achievements_display: detailed
+          plugin_achievements_secrets: yes
+          plugin_achievements_threshold: C
+          plugin_notable: yes
+          plugin_notable_filter: stars:>50 forks:>50
+          plugin_notable_from: organization
+          plugin_notable_types: commit
+          
+      - name: Languages Section
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: languages.svg
+          output_action: gist
+          committer_gist: 4d433b19f884c9c188360f4390d9e650
+          token: ${{ secrets.METRICS_TOKEN }}
+          # Options
+          user: crmacca
+          template: classic
+          base: ""
+          base_skip: yes
+          config_timezone: Australia/Sydney
+          config_twemoji: yes
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          
+      - name: Social Section
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: social.svg
+          output_action: gist
+          committer_gist: 4d433b19f884c9c188360f4390d9e650
+          token: ${{ secrets.METRICS_TOKEN }}
+          # Options
+          user: crmacca
+          template: classic
+          base: ""
+          base_skip: yes
+          config_display: large
+          config_timezone: Australia/Sydney
+          plugin_16personalities: yes
+          plugin_16personalities_scores: yes
+          plugin_16personalities_sections: personality, profile, traits
+          plugin_16personalities_url: https://www.16personalities.com/profiles/77ae30e239dce
+          plugin_steam: yes
+          plugin_steam_achievements_limit: 2
+          plugin_steam_games_limit: 1
+          plugin_steam_playtime_threshold: 2
+          plugin_steam_recent_games_limit: 1
+          plugin_steam_sections: player, most-played, recently-played
+          plugin_steam_user: IAmNotAMonkey
+          
